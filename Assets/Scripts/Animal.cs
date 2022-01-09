@@ -9,7 +9,7 @@ public class Animal : MonoBehaviour
     private float speed;
     private float jumpForce;
 
-    public string nameGS
+    public string nameGS //ENCAPSULATION
     {
         get => _name;
         set
@@ -20,8 +20,8 @@ public class Animal : MonoBehaviour
             }
         }
     }
-    public float _heath
-    {
+    public float _heath //ENCAPSULATION
+{
         get => heath;
         set
         {
@@ -31,7 +31,7 @@ public class Animal : MonoBehaviour
             }
         }
     }
-    public float _speed
+    public float _speed //ENCAPSULATION
     {
         get => speed;
         set
@@ -41,7 +41,8 @@ public class Animal : MonoBehaviour
         }
     }
 
-    public float _jumpForce { 
+    public float _jumpForce
+    {  //ENCAPSULATION
         get => jumpForce; 
         set {
             if (value >= 0)
@@ -91,5 +92,9 @@ public class Animal : MonoBehaviour
     {
         Debug.Log("Animal Alo ALo ~ Hello World ");
     }
-
+    public bool CheckHeath(float x) //ABSTRACTION
+    {
+        if (heath > x) return true;
+        return false;
+    }
 }
