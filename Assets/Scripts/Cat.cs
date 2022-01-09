@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cat : Animal
+public class Cat : Animal //INHERITANCE
 {
     public Cat() : base("Cat", 300, 6, 6)
     {
@@ -13,30 +13,30 @@ public class Cat : Animal
         StartCoroutine(DoAnimal());
     }
 
-    public override void Eat()
+    public override void Eat() //POLYMORPHISM
     {
         _heath += 20f;
         Debug.Log(nameGS + "Meo Meo *-* ");
     }
-    public override void Talk()
+    public override void Talk() //POLYMORPHISM
     {
         Debug.Log("Meo Meo");
     }
     
-    public override void Walk(Vector3 direction)
+    public override void Walk(Vector3 direction) //POLYMORPHISM
     {
-        if (_heath > 10)
+        if (CheckHeath(10))
         {
             base.Walk(direction);
-            _heath -= 0.1f;
+            _heath -= 10f;
         }
         else
             Debug.Log(nameGS + "hurry ^-^");
     }
-    public override void Jump(float maxHeight)
+    public override void Jump(float maxHeight) //POLYMORPHISM
     {
         
-        if (_heath > 5)
+        if (CheckHeath(5))
         {
             _heath -= 5f;
             base.Jump(maxHeight + (maxHeight * 0.5f));
@@ -45,9 +45,9 @@ public class Cat : Animal
             Debug.Log(nameGS + "hurry ^-^");
     }
 
-    public override void Jump(Vector3 JumpVector)
+    public override void Jump(Vector3 JumpVector) //POLYMORPHISM
     {
-        if (_heath > 5)
+        if (CheckHeath(5))
         {
             _heath -= 5f;
             base.Jump(JumpVector);

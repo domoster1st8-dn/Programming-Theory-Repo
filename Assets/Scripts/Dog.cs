@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dog : Animal
+public class Dog : Animal //INHERITANCE
 {
     private void Start()
     {
@@ -14,7 +14,7 @@ public class Dog : Animal
     }
    
 
-    public override void Eat()
+    public override void Eat() //POLYMORPHISM
     {
         _heath += 50;
         Debug.Log(nameGS + "Gau Gau *-* ");
@@ -24,55 +24,55 @@ public class Dog : Animal
 
 
 
-    public override void Jump(float maxHeight)
+    public override void Jump(float maxHeight) //POLYMORPHISM
     {
-        if (_heath > 10)
+        if (CheckHeath(10))
         {
             base.Jump(maxHeight);
-            _heath -= 1f;
+            _heath -= 10f;
         }
         else
             Debug.Log(nameGS + "Gau Gau ^-^");
         
     }
 
-    public override void Jump(Vector3 JumpVector)
+    public override void Jump(Vector3 JumpVector) //POLYMORPHISM
     {
-        if (_heath > 10)
+        if (CheckHeath(10))
         {
             base.Jump(JumpVector);
-            _heath -= 1f;
+            _heath -= 10f;
         }
         else
             Debug.Log(nameGS + "Gau Gau ^-^");
        
     }
 
-    public override void Talk()
+    public override void Talk() //POLYMORPHISM
     {
         Debug.Log("Gau Gau");
     }
 
    
 
-    public override void Walk()
+    public override void Walk() //POLYMORPHISM
     {
-        if (_heath > 10)
+        if (CheckHeath(10))
         {
             transform.position += Vector3.forward * (_speed + _speed * 0.5f) * Time.deltaTime;
-            _heath -= 0.5f;
+            _heath -= 10f;
         }
         else
             Debug.Log(nameGS + "Gau Gau ^-^");
         
     }
 
-    public override void Walk(Vector3 direction)
+    public override void Walk(Vector3 direction) //POLYMORPHISM
     {
-        if (_heath > 10)
+        if (CheckHeath(10))
         {
             transform.position += direction * (_speed + _speed * 0.5f) * Time.deltaTime;
-            _heath -= 0.5f;
+            _heath -= 10f;
         }
         else
             Debug.Log(nameGS + "Gau Gau ^-^");
