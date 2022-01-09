@@ -6,12 +6,10 @@ public class SpawnAnimal : MonoBehaviour
 {
     public GameObject objAnimal;
     public Material[] materialAnimal;
+    public GameObject canvaObj;
     [SerializeField]
     private int countSpawn = 200;
-    private void Start()
-    {
-        StartCoroutine(Spawn());
-    }
+   
 
     IEnumerator Spawn()
     {
@@ -33,5 +31,10 @@ public class SpawnAnimal : MonoBehaviour
             }
             
         }
+    }
+    public void offCanva()
+    {
+        canvaObj.SetActive(false);
+        StartCoroutine(Spawn());
     }
 }
